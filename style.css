@@ -1,0 +1,42 @@
+body{
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    height: 100vh;            /* full screen height */
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap:10px;
+    justify-content: center;
+    
+}
+.card{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 10px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.image{
+    width: 100%;            /* take full width of card */
+    height: 100%;           /* take full height */
+    object-fit: contain;      /* fit properly */
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-duration: 0.1s;
+}
+/* show image when flipped */
+.card.flip .image{
+    opacity: 1;
+}
