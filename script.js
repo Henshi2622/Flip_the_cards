@@ -55,16 +55,14 @@ for (let i = 0; i < totalCards; i++) {
                 // disable clicking
                 firstcard.style.pointerEvents = "none";
                 secondcard.style.pointerEvents = "none";
-                firstcard = null;
-                secondcard = null;
+                reset();
             }
             else if(firstcard.querySelector("img").src != secondcard.querySelector("img").src){
                 // console.log(" not match");
                 setTimeout(() => {
                     firstcard.classList.remove("flip");
                     secondcard.classList.remove("flip");
-                    firstcard = null;
-                    secondcard = null;
+                    reset();
                 }, 500);
             }
         }
@@ -72,5 +70,10 @@ for (let i = 0; i < totalCards; i++) {
     });
 
     container.appendChild(card);
+}
+
+function reset(){
+    firstcard = null;
+    secondcard = null;
 }
 
